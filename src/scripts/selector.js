@@ -14,12 +14,3 @@ export function createSlider(selector) {
     step: 1,
   });
 }
-
-// remove focus stuck
-export function noStuck(selector) {
-  const sliderEl = document.getElementById(selector);
-
-  sliderEl.noUiSlider.on("end", () => {
-    sliderEl.querySelectorAll(".noUi-handle").forEach((h) => h.blur());
-  });
-}

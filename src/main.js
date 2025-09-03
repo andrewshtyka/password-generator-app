@@ -8,12 +8,11 @@ import "./styles/checkboxes.css";
 import "./styles/strength.css";
 import "./styles/button.css";
 
-// JS import
-import { createSlider, noStuck } from "./scripts/selector";
+// // JS import
+import { createSlider } from "./scripts/selector";
 
-// ==================================================
-// ==================================================
-// ==================================================
+// // ==================================================
+// // ==================================================
+// // ==================================================
 
 createSlider("slider");
-noStuck("slider");

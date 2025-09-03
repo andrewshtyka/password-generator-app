@@ -16,8 +16,7 @@
     color 150ms ease-in-out;
 
   &:hover,
-  &:focus,
-  &:focus-within {
+  &:focus-visible {
     background-color: transparent;
     border: var(--0_5) solid var(--shadow-color-green-100);
 
@@ -25,8 +24,7 @@
   }
 
   &:hover .c-icon_arrow,
-  &:focus .c-icon_arrow,
-  &:focus-within .c-icon_arrow {
+  &:focus-visible .c-icon_arrow {
     fill: var(--color-green-200);
   }
 }

@@ -1,0 +1,41 @@
+/* ========== SIZES ========== */
+.f-preset_1 {
+  font-size: var(--8);
+  line-height: 130%;
+}
+
+.f-preset_2 {
+  font-size: var(--6);
+  line-height: 130%;
+}
+
+.f-preset_3 {
+  font-size: var(--4);
+  line-height: 130%;
+
+  @media (width >= 48rem) {
+    font-size: calc(var(--4) + var(--0_5));
+  }
+}
+
+/* ========== LAYOUT ========== */
+.f-align\:center {
+  text-align: center;
+}
+
+.f-align\:left {
+  text-align: left;
+}
+
+.f-align\:right {
+  text-align: right;
+}
+
+/* ========== COLORS ========== */
+.f-color\:grey-600 {
+  color: var(--color-grey-600);
+}
+
+.f-color\:green-200 {
+  color: var(--color-green-200);
+}

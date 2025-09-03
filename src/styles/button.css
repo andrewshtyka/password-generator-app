@@ -1,0 +1,41 @@
+/* ========== COMPONENTS ========== */
+
+.c-button_primary {
+  background-color: var(--color-green-200);
+  color: var(--color-grey-800);
+  padding: calc(var(--4) + var(--0_5));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--4);
+
+  border: var(--0_5) solid var(--shadow-color-green-0);
+
+  transition: background-color 150ms ease-in-out, border 150ms ease-in-out,
+    color 150ms ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    background-color: transparent;
+    border: var(--0_5) solid var(--shadow-color-green-100);
+
+    color: var(--color-green-200);
+  }
+
+  &:hover .c-icon_arrow,
+  &:focus .c-icon_arrow,
+  &:focus-within .c-icon_arrow {
+    fill: var(--color-green-200);
+  }
+}
+
+.c-icon_arrow {
+  transition: fill 150ms ease-in-out;
+  fill: var(--color-grey-800);
+}
+
+/* ========== LAYOUT ========== */
+
+/* ========== UTILITIES ========== */

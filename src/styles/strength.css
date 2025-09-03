@@ -1,0 +1,58 @@
+/* ========== COMPONENTS ========== */
+
+.c-strength_bar {
+  display: flex;
+  align-items: center;
+  gap: var(--4);
+
+  padding: var(--4);
+  background-color: var(--color-grey-850);
+}
+
+.c-visual_strength {
+  height: var(--7);
+  width: var(--2_5);
+  border: var(--0_5) solid var(--color-grey-200);
+}
+
+/* ========== LAYOUT ========== */
+
+.o-bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--4);
+}
+
+.o-status {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.o-visual_layout {
+  display: flex;
+  width: fit-content;
+  gap: var(--2);
+}
+
+/* ========== UTILITIES ========== */
+
+.u-strength_1 {
+  background-color: var(--color-red-500);
+  border-color: var(--color-red-500);
+}
+
+.u-strength_2 {
+  background-color: var(--color-orange-400);
+  border-color: var(--color-orange-400);
+}
+
+.u-strength_3 {
+  background-color: var(--color-yellow-300);
+  border-color: var(--color-yellow-300);
+}
+
+.u-strength_4 {
+  background-color: var(--color-green-200);
+  border-color: var(--color-green-200);
+}

@@ -1,0 +1,79 @@
+/* ========== COMPONENTS ========== */
+
+.c-checkbox {
+  & input {
+    display: none; /* hide original checkbox*/
+  }
+
+  & label {
+    display: block;
+    position: relative;
+    padding-left: var(--9);
+    cursor: pointer;
+    user-select: none;
+
+    outline: none;
+  }
+
+  /* square */
+  & label:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: var(--5);
+    width: var(--5);
+    background: transparent;
+    border: var(--0_5) solid var(--color-grey-200);
+
+    transition: all 150ms ease-in-out;
+  }
+
+  /* checker */
+  & label:after {
+    content: "";
+    position: absolute;
+    left: calc(var(--0_5) + var(--px) / 2);
+    top: 50%;
+    width: var(--2);
+    height: var(--3);
+    transform: scaleX(-1) rotate(135deg);
+    transform-origin: left top;
+    border-right: calc(var(--px) + var(--0_5)) solid var(--color-grey-850);
+    border-top: calc(var(--px) + var(--0_5)) solid var(--color-grey-850);
+    opacity: 0;
+    transition: all 150ms;
+  }
+
+  /* checker visible */
+
+  & input:checked + label::after {
+    opacity: 1;
+  }
+
+  & input:checked + label:before {
+    background-color: var(--color-green-200);
+    border-color: var(--color-green-200);
+  }
+
+  /* checkbox focus */
+  & label:focus,
+  & label:focus-visible {
+    outline: none;
+  }
+
+  & label:focus-visible:before {
+    outline: 2px solid red;
+  }
+}
+
+/* ========== LAYOUT ========== */
+
+.o-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--4);
+}
+
+/* ========== UTILITIES ========== */

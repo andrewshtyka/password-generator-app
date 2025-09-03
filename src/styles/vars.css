@@ -1,0 +1,63 @@
+:root {
+  /* COLORS */
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-grey-950: hsl(255, 22%, 4%);
+  --color-grey-900: hsl(248, 17%, 9%);
+  --color-grey-850: hsl(248, 15%, 11%);
+  --color-grey-800: hsl(248, 10%, 15%);
+  --color-grey-700: hsl(248, 5%, 34%);
+  --color-grey-600: hsl(251, 9%, 53%);
+  --color-grey-200: hsl(252, 11%, 91%);
+  --color-green-200: hsl(127, 100%, 82%);
+  --color-yellow-300: hsl(42, 91%, 68%);
+  --color-orange-400: hsl(13, 95%, 66%);
+  --color-red-500: hsl(0, 91%, 63%);
+  --color-gradient-1: linear-gradient(
+    90deg,
+    var(--color-grey-900),
+    var(--color-grey-950)
+  );
+
+  /* SHADOWS */
+  --shadow-color-green-0: hsla(127, 100%, 82%, 0);
+  --shadow-color-green-100: hsla(127, 100%, 82%, 100);
+
+  /* SPACING */
+  --space: calc(1rem / 16);
+  --0: calc(var(--space) * 0);
+  --px: calc(var(--space) * 1);
+  --0_5: calc(var(--space) * 2);
+  --1: calc(var(--space) * 4);
+  --1_5: calc(var(--space) * 6);
+  --2: calc(var(--space) * 8);
+  --2_5: calc(var(--space) * 10);
+  --3: calc(var(--space) * 12);
+  --3_5: calc(var(--space) * 14);
+  --4: calc(var(--space) * 16);
+  --5: calc(var(--space) * 20);
+  --6: calc(var(--space) * 24);
+  --7: calc(var(--space) * 28);
+  --8: calc(var(--space) * 32);
+  --9: calc(var(--space) * 36);
+  --10: calc(var(--space) * 40);
+  --11: calc(var(--space) * 44);
+  --12: calc(var(--space) * 48);
+  --14: calc(var(--space) * 56);
+  --16: calc(var(--space) * 64);
+  --20: calc(var(--space) * 80);
+  --24: calc(var(--space) * 96);
+  --28: calc(var(--space) * 112);
+  --32: calc(var(--space) * 128);
+  --36: calc(var(--space) * 144);
+  --40: calc(var(--space) * 160);
+  --44: calc(var(--space) * 176);
+  --48: calc(var(--space) * 192);
+  --52: calc(var(--space) * 208);
+  --56: calc(var(--space) * 224);
+  --60: calc(var(--space) * 240);
+  --64: calc(var(--space) * 256);
+  --72: calc(var(--space) * 288);
+  --80: calc(var(--space) * 320);
+  --96: calc(var(--space) * 384);
+}

@@ -34,6 +34,9 @@
   fill: var(--color-grey-800);
 }
 
-/* ========== LAYOUT ========== */
-
 /* ========== UTILITIES ========== */
+
+.u-button_disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}

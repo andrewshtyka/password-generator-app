@@ -380,10 +380,13 @@
         <div class="o-card_inner">
           <!-- #region = PASSWORD -->
           <div class="c-password">
-            <p class="f-preset_2 o-password_text">PTx1f5DaFX</p>
+            <p id="password-value" class="f-preset_2 o-password_text">
+              PTx1f5DaFX
+            </p>
 
-            <button class="c-button_secondary" type="button">
+            <button class="c-button_secondary" type="button" id="button-copy">
               <span
+                id="message-copied"
                 class="o-message_copy f-preset_3 f-color:green-200 is-hidden"
                 >COPIED</span
               >
@@ -395,15 +398,20 @@
           <!-- #endregion = PASSWORD -->
 
           <div class="c-content">
-            <!-- #region = SELECTOR -->
+            <!-- #region = SLIDER -->
             <div class="o-content_selector">
               <div class="o-content_label">
                 <p for="password-length" class="f-preset_3">Character Length</p>
-                <p class="f-preset_2 f-align:right f-color:green-200">0</p>
+                <p
+                  id="slider-value"
+                  class="f-preset_2 f-align:right f-color:green-200"
+                >
+                  0
+                </p>
               </div>
               <div id="slider"></div>
             </div>
-            <!-- #endregion = SELECTOR -->
+            <!-- #endregion = SLIDER -->
 
             <!-- #region = CHECKBOXES -->
             <ul class="o-list">
@@ -487,6 +495,14 @@
                   </label>
                 </div>
               </li>
+              <li>
+                <p
+                  id="error-checkbox"
+                  class="f-preset_3 f-color:red-500 f-margin_top-bottom is-hidden"
+                >
+                  Choose at least one option above
+                </p>
+              </li>
             </ul>
             <!-- #endregion = CHECKBOXES -->
 
@@ -495,19 +511,23 @@
               <div class="c-strength_bar">
                 <div class="o-status">
                   <p class="f-preset_3 f-color:grey-600">STRENGTH</p>
-                  <p class="f-preset_3">MEDIUM</p>
+                  <p id="strength-value" class="f-preset_3 is-hidden"></p>
                 </div>
                 <ul class="o-visual_layout">
-                  <li class="c-visual_strength"></li>
-                  <li class="c-visual_strength"></li>
-                  <li class="c-visual_strength"></li>
-                  <li class="c-visual_strength"></li>
+                  <li id="strength-1" class="c-visual_strength"></li>
+                  <li id="strength-2" class="c-visual_strength"></li>
+                  <li id="strength-3" class="c-visual_strength"></li>
+                  <li id="strength-4" class="c-visual_strength"></li>
                 </ul>
               </div>
               <!-- #endregion = STRENGTH -->
 
               <!-- #region = BUTTON -->
-              <button class="c-button_primary f-preset_3" type="button">
+              <button
+                class="c-button_primary f-preset_3"
+                type="button"
+                id="button-generate"
+              >
                 GENERATE
                 <svg height="12" width="12">
                   <use

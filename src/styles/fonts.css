@@ -31,6 +31,10 @@
   text-align: right;
 }
 
+.f-margin_top-bottom {
+  margin-block: var(--2);
+}
+
 /* ========== COLORS ========== */
 .f-color\:grey-600 {
   color: var(--color-grey-600);
@@ -38,4 +42,8 @@
 
 .f-color\:green-200 {
   color: var(--color-green-200);
+}
+
+.f-color\:red-500 {
+  color: var(--color-red-500);
 }

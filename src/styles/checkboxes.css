@@ -13,6 +13,8 @@
     user-select: none;
 
     outline: none;
+
+    padding-block: var(--2);
   }
 
   /* square */
@@ -73,7 +75,7 @@
 .o-list {
   display: flex;
   flex-direction: column;
-  gap: var(--4);
+  /* gap: var(--4); */
 }
 
 /* ========== UTILITIES ========== */

@@ -9,12 +9,15 @@
     display: block;
     position: relative;
     padding-left: var(--9);
+    padding-block: var(--2);
+
     cursor: pointer;
     user-select: none;
-
     outline: none;
 
-    padding-block: var(--2);
+    @media (width >= 48rem) {
+      padding-left: var(--11);
+    }
   }
 
   /* square */
@@ -60,13 +63,17 @@
   }
 
   /* checkbox focus */
-  & label:focus,
-  & label:focus-visible {
-    outline: none;
-  }
 
   & label:focus-visible:before {
-    outline: 2px solid red;
+    background-color: var(--color-grey-200);
+    outline: var(--0_5) solid var(--color-grey-200);
+    outline-offset: var(--1);
+  }
+
+  @media (width >= 64rem) {
+    & label:hover:before {
+      background-color: var(--color-grey-200);
+    }
   }
 }
 
@@ -75,7 +82,4 @@
 .o-list {
   display: flex;
   flex-direction: column;
-  /* gap: var(--4); */
 }
-
-/* ========== UTILITIES ========== */

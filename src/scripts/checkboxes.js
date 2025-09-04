@@ -22,3 +22,14 @@ export function updateCheckboxObj(event) {
 export function getCheckboxesObj() {
   return options;
 }
+
+// make checkbox work on keys Enter and Space
+export function checkboxKeyboardToggle(labelEl, inputEl) {
+  labelEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      inputEl.checked = !inputEl.checked;
+      inputEl.dispatchEvent(new Event("change"));
+    }
+  });
+}

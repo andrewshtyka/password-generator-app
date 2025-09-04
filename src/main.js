@@ -13,7 +13,6 @@ import * as Slider from "./scripts/slider";
 import * as Checkbox from "./scripts/checkboxes";
 import * as Generate from "./scripts/generate";
 import * as Clipboard from "./scripts/clipboard-copy";
-import * as Strength from "./scripts/strength-check";
 
 // init custom slider
 const sliderEl = document.getElementById("slider");
@@ -45,3 +44,14 @@ buttonGenerate.addEventListener("click", () => {
 
 const buttonCopy = document.getElementById("button-copy");
 buttonCopy.addEventListener("click", Clipboard.copyToClipboard);
+
+// keyboard toggle
+const labelsListCheckbox = document.querySelectorAll("label[for^=checkbox]");
+labelsListCheckbox.forEach((el) => {
+  const labelEl = el;
+  const inputEl = document.getElementById(el.getAttribute("for"));
+  Checkbox.checkboxKeyboardToggle(labelEl, inputEl);
+});
+
+// const labelCheckbox = document.querySelector("label[for='checkbox-input']");
+// const inputCheckbox = document.getElementById("checkbox-input");

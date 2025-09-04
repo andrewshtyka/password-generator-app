@@ -46,6 +46,7 @@
     box-shadow: var(--0) var(--0) var(--0) var(--0_5)
       var(--shadow-color-green-100);
     transform: scale(1.2);
+    outline: none;
   }
 
   @media (width >= 64rem) {
@@ -87,6 +88,11 @@
   display: flex;
   flex-direction: column;
   gap: var(--6);
+
+  @media (width >= 48rem) {
+    padding: var(--8);
+    padding-block-start: var(--6);
+  }
 }
 
 /* ========== LAYOUT ========== */

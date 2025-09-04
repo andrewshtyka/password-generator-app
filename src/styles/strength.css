@@ -7,6 +7,10 @@
 
   padding: var(--4);
   background-color: var(--color-grey-850);
+
+  @media (width >= 48rem) {
+    padding: var(--5) var(--8);
+  }
 }
 
 .c-visual_strength {
@@ -21,6 +25,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--4);
+
+  @media (width >= 48rem) {
+    gap: var(--6);
+  }
 }
 
 .o-status {

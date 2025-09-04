@@ -1,7 +1,11 @@
 /* ========== SIZES ========== */
 .f-preset_1 {
-  font-size: var(--8);
+  font-size: var(--6);
   line-height: 130%;
+
+  @media (width >= 48rem) {
+    font-size: var(--8);
+  }
 }
 
 .f-preset_2 {
@@ -15,6 +19,15 @@
 
   @media (width >= 48rem) {
     font-size: calc(var(--4) + var(--0_5));
+  }
+}
+
+.f-preset_4 {
+  font-size: var(--4);
+  line-height: 130%;
+
+  @media (width >= 48rem) {
+    font-size: var(--6);
   }
 }
 

@@ -29,6 +29,14 @@ body {
 .c-bg {
   background: var(--color-gradient-1);
   min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (width >= 48rem) {
+    justify-content: center;
+    padding-block-end: 10svh;
+  }
 }
 
 .c-card {
@@ -36,6 +44,12 @@ body {
   flex-direction: column;
   gap: var(--4);
   padding: var(--16) var(--4);
+  max-inline-size: calc(var(--28) * 5);
+  width: 100%;
+
+  @media (width >= 48rem) {
+    gap: var(--8);
+  }
 }
 
 /* ========== LAYOUT ========== */
@@ -44,6 +58,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--4);
+
+  @media (width >= 48rem) {
+    gap: var(--6);
+  }
 }
 
 /* ========== UTILITIES ========== */

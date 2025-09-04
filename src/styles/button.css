@@ -15,7 +15,6 @@
   transition: background-color 150ms ease-in-out, border 150ms ease-in-out,
     color 150ms ease-in-out;
 
-  &:hover,
   &:focus-visible {
     background-color: transparent;
     border: var(--0_5) solid var(--shadow-color-green-100);
@@ -23,9 +22,24 @@
     color: var(--color-green-200);
   }
 
-  &:hover .c-icon_arrow,
   &:focus-visible .c-icon_arrow {
     fill: var(--color-green-200);
+  }
+
+  @media (width >= 48rem) {
+    padding: var(--5);
+  }
+
+  @media (width >= 64rem) {
+    &:hover {
+      background-color: transparent;
+      border: var(--0_5) solid var(--shadow-color-green-100);
+      color: var(--color-green-200);
+    }
+
+    &:hover .c-icon_arrow {
+      fill: var(--color-green-200);
+    }
   }
 }
 

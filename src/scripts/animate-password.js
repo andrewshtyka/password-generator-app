@@ -7,8 +7,7 @@ export function animationPassword(el, password, settings) {
   const { upper, lower, nums, syms } = settings;
   const charSet = upper + lower + nums + syms;
 
-  // reset text, fix height
-  el.style.minHeight = `${el.offsetHeight}px`;
+  // reset text
   el.textContent = "";
 
   if (!password) return;

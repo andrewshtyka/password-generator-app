@@ -372,11 +372,11 @@
 
         <div class="o-card_inner">
           <!-- #region = PASSWORD -->
-          <div class="c-password">
+          <div id="card-password" class="c-password">
             <p id="password-value" class="f-preset_1 o-password_text">PTx1f5DaFX</p>
 
             <button class="c-button_secondary" type="button" id="button-copy">
-              <span id="message-copied" class="o-message_copy f-preset_3 f-color:green-200 is-hidden">COPIED</span>
+              <span id="message-copied" class="c-message_copy f-preset_3 f-color:green-200 is-hidden">COPIED</span>
               <svg class="c-icon_copy" height="20" width="20">
                 <use href="./src/assets/images/icons.svg#copy" />
               </svg>
@@ -384,7 +384,7 @@
           </div>
           <!-- #endregion = PASSWORD -->
 
-          <div class="c-content">
+          <div id="card-settings" class="c-content">
             <!-- #region = SLIDER -->
             <div class="o-content_selector">
               <div class="o-content_label">
@@ -405,6 +405,7 @@
                     type="checkbox"
                     name="checkbox-uppercase"
                     value="Include Uppercase Letters"
+                    checked
                   />
 
                   <label for="checkbox-uppercase" class="f-preset_3" tabindex="0" aria-disabled="false">

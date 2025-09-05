@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 // CSS import
 import "./main.css";
 import "./styles/vars.css";
@@ -13,7 +15,8 @@ import * as Slider from "./scripts/slider";
 import * as Checkbox from "./scripts/checkboxes";
 import * as Generate from "./scripts/generate";
 import * as Clipboard from "./scripts/clipboard-copy";
-import * as Animate from "./scripts/animate";
+import * as AnimateOnLoad from "./scripts/animate-onload";
+import * as AnimateCursor from "./scripts/animate-cursor";
 
 // init custom slider
 const sliderEl = document.getElementById("slider");
@@ -43,6 +46,7 @@ buttonGenerate.addEventListener("click", () => {
   Generate.generatePassword(settings, sliderEl, checkboxesObj);
 });
 
+// init button for copying password to clipboard
 const buttonCopy = document.getElementById("button-copy");
 buttonCopy.addEventListener("click", Clipboard.copyToClipboard);
 
@@ -54,8 +58,45 @@ labelsListCheckbox.forEach((el) => {
   Checkbox.checkboxKeyboardToggle(labelEl, inputEl);
 });
 
-// animation on load: heading
+// animation on load
 const pageHeader = document.getElementById("page-header");
-document.fonts.ready.then(() => {
-  Animate.animationHeader(pageHeader, settings);
+const cardPassword = document.getElementById("card-password");
+const cardSettings = document.getElementById("card-settings");
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.fonts.ready.then(() => {
+    AnimateOnLoad.animationHeader(
+      pageHeader,
+      settings,
+      cardPassword,
+      cardSettings
+    );
+  });
+});
+
+// card follows cursor movement (only desktop)
+window.addEventListener("DOMContentLoaded", () => {
+  const bgEl = document.querySelector(".c-bg");
+  const cardEl = document.querySelector(".c-card");
+
+  if (!bgEl || !cardEl) return;
+
+  let removeMouseMove = null;
+
+  const checkWidth = () => {
+    if (window.innerWidth >= 1024) {
+      if (!removeMouseMove) {
+        removeMouseMove = AnimateCursor.animationCard(bgEl, cardEl);
+      }
+    } else {
+      if (removeMouseMove) {
+        removeMouseMove();
+        removeMouseMove = null;
+      }
+      gsap.killTweensOf(cardEl);
+    }
+  };
+
+  checkWidth();
+  window.addEventListener("resize", checkWidth);
 });

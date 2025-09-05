@@ -1,5 +1,3 @@
-import * as Validate from "./validate";
-
 // get status of each checkbox
 const options = {};
 
@@ -15,7 +13,13 @@ export function initCheckboxObj(selectors) {
 // update checkboxes
 export function updateCheckboxObj(event) {
   options[event.target.id] = event.target.checked;
-  Validate.validateCheckboxes(options);
+
+  const buttonGenerate = document.getElementById("button-generate");
+  if (Object.values(options).includes(true)) {
+    buttonGenerate.classList.remove("u-button_disabled");
+  } else {
+    buttonGenerate.classList.add("u-button_disabled");
+  }
 }
 
 // send object with statuses of checkboxes to main.js

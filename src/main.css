@@ -22,6 +22,7 @@ body {
   overflow-wrap: break-word;
   hyphens: auto;
   -webkit-hyphens: auto;
+  background-color: hsl(248, 17%, 9%);
 }
 
 /* ========== COMPONENTS ========== */
@@ -37,6 +38,11 @@ body {
     justify-content: center;
     padding-block-end: 10svh;
   }
+
+  @media (width >= 64rem) {
+    /* for 3d */
+    perspective: 1000px;
+  }
 }
 
 .c-card {
@@ -49,6 +55,7 @@ body {
 
   @media (width >= 48rem) {
     gap: var(--8);
+    padding: var(--0);
   }
 }
 

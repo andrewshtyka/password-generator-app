@@ -52,7 +52,6 @@
   }
 
   /* checker visible */
-
   & input:checked + label::after {
     opacity: 1;
   }
@@ -63,7 +62,6 @@
   }
 
   /* checkbox focus */
-
   & label:focus-visible:before {
     background-color: var(--color-grey-200);
     outline: var(--0_5) solid var(--color-grey-200);

@@ -1,11 +1,9 @@
-import * as Validate from "./validate";
 import * as Strength from "./strength-check";
+import * as AnimatePassword from "./animate-password";
 
-export function generatePassword(
-  { upper, lower, nums, syms },
-  sliderSelector,
-  checkboxesObj
-) {
+export function generatePassword(settings, sliderSelector, checkboxesObj) {
+  const { upper, lower, nums, syms } = settings;
+
   const {
     "checkbox-uppercase": uppercase,
     "checkbox-lowercase": lowercase,
@@ -26,10 +24,7 @@ export function generatePassword(
   if (lowercase) charset += lower;
   if (numbers) charset += nums;
   if (symbols) charset += syms;
-  if (!charset) {
-    Validate.validateCheckboxes(checkboxesObj);
-    return;
-  }
+  if (!charset) return;
 
   // create password
   let password = "";
@@ -39,11 +34,12 @@ export function generatePassword(
   }
 
   Strength.strengthCheck(checkboxesObj, passwordLength);
-  showPasswordValue(password);
+  showPasswordValue(password, settings);
 }
 
 // show password in UI
-function showPasswordValue(password) {
-  const passwordValue = document.getElementById("password-value");
-  passwordValue.innerText = password;
+function showPasswordValue(password, settings) {
+  const passwordEl = document.getElementById("password-value");
+
+  AnimatePassword.animationPassword(passwordEl, password, settings);
 }

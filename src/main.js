@@ -13,6 +13,7 @@ import * as Slider from "./scripts/slider";
 import * as Checkbox from "./scripts/checkboxes";
 import * as Generate from "./scripts/generate";
 import * as Clipboard from "./scripts/clipboard-copy";
+import * as Animate from "./scripts/animate";
 
 // init custom slider
 const sliderEl = document.getElementById("slider");
@@ -53,5 +54,8 @@ labelsListCheckbox.forEach((el) => {
   Checkbox.checkboxKeyboardToggle(labelEl, inputEl);
 });
 
-// const labelCheckbox = document.querySelector("label[for='checkbox-input']");
-// const inputCheckbox = document.getElementById("checkbox-input");
+// animation on load: heading
+const pageHeader = document.getElementById("page-header");
+document.fonts.ready.then(() => {
+  Animate.animationHeader(pageHeader, settings);
+});

@@ -10,3 +10,20 @@ Password check logic:
 | 6–7    | Too weak! | Weak       | Medium     | Medium     |
 | 8–10   | Weak      | Medium     | Medium     | Strong     |
 | 11–13  | Strong    | Strong     | Strong     | Strong     |
+
+-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
+
+ON-LOAD ANIMATION
+
+- Digits
+  -- https://dribbble.com/shots/15600363-Cyberpunk-Typography
+
+- Cards, btns
+  -- https://dribbble.com/shots/25876260-CoreSentinel-CyberSecurity-Next-Gen-Ai-Driven-Website
+
+-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
+
+HOVER
+
+- Btn text
+  -- https://locomotive.ca/en

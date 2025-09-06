@@ -42,30 +42,30 @@ export function animationButtonGenerate(button, text, icon, charSet) {
     animateIcon();
     animateText();
   };
-  const onLeave = () => {
-    animateIconReverse();
-    animateText();
-  };
+  // const onLeave = () => {
+  //   animateIconReverse();
+  //   animateText();
+  // };
 
   // hover only for desktop
   if (isDesktop()) {
     button.addEventListener("mouseenter", onEnter);
-    button.addEventListener("mouseleave", onLeave);
+    button.addEventListener("mouseleave", animateIconReverse);
   }
 
   // focus and click - for all devices
-  button.addEventListener("focus", onEnter);
-  button.addEventListener("blur", onLeave);
-  button.addEventListener("click", onEnter);
+  button.addEventListener("focus", animateIcon);
+  button.addEventListener("blur", animateIconReverse);
+  button.addEventListener("click", animateIcon);
 
   // dynamic listening to resizes - to toggle hovers on devices
   window.addEventListener("resize", () => {
     if (isDesktop()) {
       button.addEventListener("mouseenter", onEnter);
-      button.addEventListener("mouseleave", onLeave);
+      button.addEventListener("mouseleave", animateIconReverse);
     } else {
       button.removeEventListener("mouseenter", onEnter);
-      button.removeEventListener("mouseleave", onLeave);
+      button.removeEventListener("mouseleave", animateIconReverse);
     }
   });
 }

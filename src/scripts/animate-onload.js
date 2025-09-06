@@ -61,5 +61,11 @@ export function animationHeader(textEl, settings, cardPassword, cardSettings) {
 
   const buttonGenerate = document.getElementById("button-generate");
   const buttonIcon = buttonGenerate.querySelector(".c-icon_arrow");
-  AnimateButton.animationButtonGenerate(buttonGenerate, buttonIcon);
+  const buttonText = buttonGenerate.querySelector(".o-button_text");
+  AnimateButton.animationButtonGenerate(
+    buttonGenerate,
+    buttonText,
+    buttonIcon,
+    charSet
+  );
 }

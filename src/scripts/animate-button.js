@@ -1,6 +1,23 @@
 import { gsap } from "gsap";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
-export function animationButtonGenerate(button, icon) {
+gsap.registerPlugin(ScrambleTextPlugin);
+
+export function animationButtonGenerate(button, text, icon, charSet) {
+  const animateText = () => {
+    gsap.killTweensOf(text);
+    gsap.to(text, {
+      duration: 0.6,
+      ease: "power1.inOut",
+      scrambleText: {
+        text: "GENERATE",
+        speed: 1,
+        chars: charSet,
+      },
+      stagger: 0.05,
+    });
+  };
+
   const animateIcon = () => {
     gsap.killTweensOf(icon);
     gsap
@@ -21,25 +38,34 @@ export function animationButtonGenerate(button, icon) {
 
   const isDesktop = () => window.innerWidth > 1024;
 
+  const onEnter = () => {
+    animateIcon();
+    animateText();
+  };
+  const onLeave = () => {
+    animateIconReverse();
+    animateText();
+  };
+
   // hover only for desktop
   if (isDesktop()) {
-    button.addEventListener("mouseenter", animateIcon);
-    button.addEventListener("mouseleave", animateIconReverse);
+    button.addEventListener("mouseenter", onEnter);
+    button.addEventListener("mouseleave", onLeave);
   }
 
   // focus and click - for all devices
-  button.addEventListener("focus", animateIcon);
-  button.addEventListener("blur", animateIconReverse);
-  button.addEventListener("click", animateIcon);
+  button.addEventListener("focus", onEnter);
+  button.addEventListener("blur", onLeave);
+  button.addEventListener("click", onEnter);
 
   // dynamic listening to resizes - to toggle hovers on devices
   window.addEventListener("resize", () => {
     if (isDesktop()) {
-      button.addEventListener("mouseenter", animateIcon);
-      button.addEventListener("mouseleave", animateIconReverse);
+      button.addEventListener("mouseenter", onEnter);
+      button.addEventListener("mouseleave", onLeave);
     } else {
-      button.removeEventListener("mouseenter", animateIcon);
-      button.removeEventListener("mouseleave", animateIconReverse);
+      button.removeEventListener("mouseenter", onEnter);
+      button.removeEventListener("mouseleave", onLeave);
     }
   });
 }

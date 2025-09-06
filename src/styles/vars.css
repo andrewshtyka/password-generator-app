@@ -13,6 +13,8 @@
   --color-yellow-300: hsl(42, 91%, 68%);
   --color-orange-400: hsl(13, 95%, 66%);
   --color-red-500: hsl(0, 91%, 63%);
+  --color-red-500-transparent: hsla(0, 91%, 63%, 0.1);
+
   --color-gradient-1: linear-gradient(
     90deg,
     var(--color-grey-900),

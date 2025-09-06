@@ -11,7 +11,8 @@
     padding-left: var(--9);
     padding-block: var(--2);
 
-    cursor: pointer;
+    cursor: none;
+
     user-select: none;
     outline: none;
 
@@ -32,7 +33,9 @@
     background: transparent;
     border: var(--0_5) solid var(--color-grey-200);
 
-    transition: all 150ms ease-in-out;
+    box-shadow: inset 0 0 0 0 var(--color-grey-800);
+
+    transition: all 200ms ease-in-out;
   }
 
   /* checker */
@@ -48,12 +51,13 @@
     border-right: calc(var(--px) + var(--0_5)) solid var(--color-grey-850);
     border-top: calc(var(--px) + var(--0_5)) solid var(--color-grey-850);
     opacity: 0;
-    transition: all 150ms;
+    transition: opacity 50ms;
   }
 
   /* checker visible */
   & input:checked + label::after {
     opacity: 1;
+    transition: opacity 400ms;
   }
 
   & input:checked + label:before {
@@ -62,15 +66,26 @@
   }
 
   /* checkbox focus */
-  & label:focus-visible:before {
-    background-color: var(--color-grey-200);
+  & label:focus-visible::before {
     outline: var(--0_5) solid var(--color-grey-200);
     outline-offset: var(--1);
   }
 
+  & input:checked + label:focus-visible::before {
+    outline: var(--0_5) solid var(--color-grey-200);
+    outline-offset: var(--1);
+  }
+
+  & input:not(:checked) + label:focus-visible::before {
+    background-color: var(--color-grey-200);
+    box-shadow: inset 0 0 0 var(--1) var(--color-grey-800);
+    outline: none;
+  }
+
   @media (width >= 64rem) {
-    & label:hover:before {
+    & input:not(:checked) + label:hover::before {
       background-color: var(--color-grey-200);
+      box-shadow: inset 0 0 0 var(--1) var(--color-grey-800);
     }
   }
 }

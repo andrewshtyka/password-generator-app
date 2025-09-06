@@ -33,7 +33,7 @@ export function generatePassword(settings, sliderSelector, checkboxesObj) {
     password += charset[randomIndex];
   }
 
-  Strength.strengthCheck(checkboxesObj, passwordLength);
+  Strength.strengthCheck(checkboxesObj, passwordLength, settings);
   showPasswordValue(password, settings);
 }
 

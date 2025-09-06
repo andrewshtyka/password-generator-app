@@ -33,8 +33,13 @@
 
 .o-status {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
+
+  @media (width >= 22rem) {
+    flex-direction: row;
+  }
 }
 
 .o-visual_layout {

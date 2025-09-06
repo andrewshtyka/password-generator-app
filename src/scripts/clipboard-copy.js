@@ -1,22 +1,25 @@
+import * as AnimatePassword from "./animate-password";
+
+let hideTimeout;
+
 // copy to clipboard
-export function copyToClipboard(event) {
+export function copyToClipboard() {
   const messageCopy = document.getElementById("message-copied");
   const passwordValue = document.getElementById("password-value");
 
   navigator.clipboard
     .writeText(passwordValue.innerText)
     .then(() => {
+      AnimatePassword.animationButtonMessageShow(messageCopy);
       messageCopy.classList.remove("is-hidden");
-      hideAfterDelay(messageCopy, 2000);
+
+      if (hideTimeout) clearTimeout(hideTimeout);
+
+      hideTimeout = setTimeout(() => {
+        AnimatePassword.animationButtonMessageHide(messageCopy);
+      }, 2000);
     })
     .catch((err) => {
       console.error("Error copying:", err);
     });
-}
-
-// hide message after delay
-function hideAfterDelay(el, delay = 2000) {
-  setTimeout(() => {
-    el.classList.add("is-hidden");
-  }, delay);
 }

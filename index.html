@@ -371,6 +371,7 @@
     <script src="./src/main.js" type="module" defer></script>
   </head>
   <body>
+    <div class="cursor"></div>
     <main class="c-bg">
       <article class="c-card">
         <h1 id="page-header" class="f-preset_4 f-align:center f-color:grey-600">
@@ -529,13 +530,13 @@
                 type="button"
                 id="button-generate"
               >
+              <span class="c-button_bg"></span>
                 GENERATE
-                <svg height="12" width="12">
-                  <use
-                    class="c-icon_arrow"
-                    href="./src/assets/images/icons.svg#arrow"
-                  />
-                </svg>
+                <span class="c-icon_wrapper">
+                  <svg class="c-icon_arrow" height="12" width="12">
+                    <use href="./src/assets/images/icons.svg#arrow" />
+                  </svg>
+                </span>
               </button>
               <!-- #endregion = BUTTON -->
             </div>

@@ -1,3 +1,5 @@
+import * as AnimateButton from "./animate-button";
+
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
@@ -56,4 +58,8 @@ export function animationHeader(textEl, settings, cardPassword, cardSettings) {
     },
     "-=2.0"
   );
+
+  const buttonGenerate = document.getElementById("button-generate");
+  const buttonIcon = buttonGenerate.querySelector(".c-icon_arrow");
+  AnimateButton.animationButtonGenerate(buttonGenerate, buttonIcon);
 }

@@ -23,6 +23,43 @@ body {
   hyphens: auto;
   -webkit-hyphens: auto;
   background-color: hsl(248, 17%, 9%);
+
+  cursor: none;
+}
+
+.cursor {
+  opacity: 0;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--3);
+  height: var(--3);
+  background-color: var(--color-red-500);
+  border: var(--px) solid var(--color-red-500);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+
+  transition: width 150ms ease-in-out, height 150ms ease-in-out,
+    background-color 150ms ease-in-out, opacity 150ms ease-in-out;
+}
+
+body:has(a:hover) .cursor,
+body:has(input:hover) .cursor,
+body:has(button:hover) .cursor,
+body:has(.noUi-touch-area:hover) .cursor {
+  width: var(--7);
+  height: var(--7);
+  background-color: var(--color-red-500-transparent);
+}
+
+body:has(a:active) .cursor,
+body:has(input:active) .cursor,
+body:has(button:active) .cursor,
+body:has(.noUi-touch-area:active) .cursor {
+  width: var(--5);
+  height: var(--5);
 }
 
 /* ========== COMPONENTS ========== */

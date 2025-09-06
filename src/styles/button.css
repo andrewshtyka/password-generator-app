@@ -1,7 +1,8 @@
 /* ========== COMPONENTS ========== */
 
 .c-button_primary {
-  background-color: var(--color-green-200);
+  cursor: none;
+  background: none;
   color: var(--color-grey-800);
   padding: calc(var(--4) + var(--0_5));
 
@@ -9,21 +10,23 @@
   align-items: center;
   justify-content: center;
   gap: var(--4);
+  border: var(--px) solid var(--color-green-200);
 
-  border: var(--0_5) solid var(--shadow-color-green-0);
+  position: relative;
+  overflow: hidden;
 
-  transition: background-color 150ms ease-in-out, border 150ms ease-in-out,
-    color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
 
   &:focus-visible {
-    background-color: transparent;
-    border: var(--0_5) solid var(--shadow-color-green-100);
-
     color: var(--color-green-200);
   }
 
   &:focus-visible .c-icon_arrow {
     fill: var(--color-green-200);
+  }
+
+  &:focus-visible .c-button_bg {
+    transform: translate(-50%, 50%);
   }
 
   @media (width >= 48rem) {
@@ -32,20 +35,45 @@
 
   @media (width >= 64rem) {
     &:hover {
-      background-color: transparent;
-      border: var(--0_5) solid var(--shadow-color-green-100);
       color: var(--color-green-200);
     }
 
     &:hover .c-icon_arrow {
       fill: var(--color-green-200);
     }
+
+    &:hover .c-button_bg {
+      transform: translate(-50%, 50%);
+    }
   }
+}
+
+.c-icon_wrapper {
+  display: flex;
+  overflow: hidden;
+  height: var(--3);
+  width: var(--3);
 }
 
 .c-icon_arrow {
   transition: fill 150ms ease-in-out;
   fill: var(--color-grey-800);
+  position: relative;
+}
+
+.c-button_bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 105%;
+  height: 105%;
+  background-color: var(--color-green-200);
+  z-index: -1;
+  pointer-events: none;
+
+  transition: transform 1000ms cubic-bezier(0.1, 0, 0, 1);
 }
 
 /* ========== UTILITIES ========== */

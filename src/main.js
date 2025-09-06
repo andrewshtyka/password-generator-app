@@ -18,6 +18,7 @@ import * as Clipboard from "./scripts/clipboard-copy";
 import * as AnimateOnLoad from "./scripts/animate-onload";
 import * as AnimateCursor from "./scripts/animate-cursor";
 
+
 // replace cursor
 const cursorSelector = document.querySelector(".cursor");
 AnimateCursor.animationReplaceCursor(cursorSelector);

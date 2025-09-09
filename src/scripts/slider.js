@@ -8,8 +8,8 @@ export function initSlider(selector) {
   if (!selector) return;
 
   noUiSlider.create(selector, {
-    start: [8],
-    range: { min: 3, max: 13 },
+    start: [9],
+    range: { min: 4, max: 13 },
     connect: [true, false],
     orientation: "horizontal",
     step: 1,

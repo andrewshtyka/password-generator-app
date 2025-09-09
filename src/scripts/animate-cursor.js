@@ -33,28 +33,7 @@ export function animationCard(bgEl, cardEl) {
   return () => bgEl.removeEventListener("mousemove", mouseMoveHandler);
 }
 
-// replace cursor
-// export function animationReplaceCursor(selector) {
-//   gsap.set(selector, { xPercent: -50, yPercent: -50, opacity: 0 });
-
-//   let xTo = gsap.quickTo(selector, "x", { duration: 0.3, ease: "power4" });
-//   let yTo = gsap.quickTo(selector, "y", { duration: 0.3, ease: "power4" });
-
-//   // show cursor after forst move
-//   window.addEventListener(
-//     "pointermove",
-//     (e) => {
-//       gsap.set(selector, { x: e.clientX, y: e.clientY, opacity: 1 });
-//     },
-//     { once: true }
-//   );
-
-//   window.addEventListener("pointermove", (e) => {
-//     xTo(e.clientX);
-//     yTo(e.clientY);
-//   });
-// }
-
+// custom cursor
 export function animationReplaceCursor(cursorEl) {
   if (!cursorEl) return;
 

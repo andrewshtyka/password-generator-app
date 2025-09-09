@@ -22,7 +22,7 @@ export function strengthCheck(checkboxesObj, passwordLength, settings) {
 
   let newMessage = "";
 
-  if (passwordLength >= 3 && passwordLength <= 5) {
+  if (passwordLength >= 4 && passwordLength <= 5) {
     newMessage = checkboxAmount === 4 ? message2 : message1;
   } else if (passwordLength >= 6 && passwordLength <= 7) {
     if (checkboxAmount === 1) newMessage = message1;

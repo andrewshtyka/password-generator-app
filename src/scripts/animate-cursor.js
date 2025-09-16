@@ -39,11 +39,9 @@ export function animationReplaceCursor(cursorEl) {
 
   const updateCursorState = () => {
     if (window.innerWidth >= 1024) {
-      // desktop - custom cursor
       gsap.set(cursorEl, { opacity: 1, xPercent: -50, yPercent: -50 });
       document.body.style.cursor = "none";
 
-      // cursor movement
       const xTo = gsap.quickTo(cursorEl, "x", {
         duration: 0.3,
         ease: "power4",
@@ -54,20 +52,35 @@ export function animationReplaceCursor(cursorEl) {
       });
 
       const pointerMoveHandler = (e) => {
+        gsap.to(cursorEl, { opacity: 1, duration: 0 }); // show cursor when it's moving
         xTo(e.clientX);
         yTo(e.clientY);
       };
 
       window.addEventListener("pointermove", pointerMoveHandler);
-
-      // save to remove
       animationReplaceCursor._handler = pointerMoveHandler;
+
+      // tracking mouse exiting the window (chrome, mozilla, safari)
+      const outHandler = (e) => {
+        if (!e.relatedTarget && !e.toElement) {
+          gsap.to(cursorEl, { opacity: 0, duration: 0 });
+        }
+      };
+
+      // mouse is back into window
+      const overHandler = () => {
+        gsap.to(cursorEl, { opacity: 1, duration: 0 });
+      };
+
+      window.addEventListener("mouseout", outHandler);
+      window.addEventListener("mouseover", overHandler);
+
+      animationReplaceCursor._outHandler = outHandler;
+      animationReplaceCursor._overHandler = overHandler;
     } else {
-      // mobile / tablets - default cursor
       gsap.set(cursorEl, { opacity: 0 });
       document.body.style.cursor = "auto";
 
-      // remove prev event listener (in case there was one)
       if (animationReplaceCursor._handler) {
         window.removeEventListener(
           "pointermove",
@@ -75,10 +88,23 @@ export function animationReplaceCursor(cursorEl) {
         );
         animationReplaceCursor._handler = null;
       }
+      if (animationReplaceCursor._outHandler) {
+        window.removeEventListener(
+          "mouseout",
+          animationReplaceCursor._outHandler
+        );
+        animationReplaceCursor._outHandler = null;
+      }
+      if (animationReplaceCursor._overHandler) {
+        window.removeEventListener(
+          "mouseover",
+          animationReplaceCursor._overHandler
+        );
+        animationReplaceCursor._overHandler = null;
+      }
     }
   };
 
-  // init
   updateCursorState();
   window.addEventListener("resize", updateCursorState);
 }

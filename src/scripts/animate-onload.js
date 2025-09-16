@@ -8,6 +8,8 @@ gsap.registerPlugin(SplitText, ScrambleTextPlugin);
 
 // header and cards animation on load
 export function animationHeader(textEl, settings, cardPassword, cardSettings) {
+  document.querySelector(".c-bg").style.opacity = "1";
+
   const { upper, lower, nums, syms } = settings;
   const charSet = nums + syms;
 

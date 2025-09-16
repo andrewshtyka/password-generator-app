@@ -65,6 +65,8 @@ body:has(.noUi-touch-area:active) .cursor {
 /* ========== COMPONENTS ========== */
 
 .c-bg {
+  opacity: 0;
+
   background: var(--color-gradient-1);
   min-height: 100svh;
   display: flex;

@@ -68,7 +68,7 @@ const pageHeader = document.getElementById("page-header");
 const cardPassword = document.getElementById("card-password");
 const cardSettings = document.getElementById("card-settings");
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   document.fonts.ready.then(() => {
     AnimateOnLoad.animationHeader(
       pageHeader,
@@ -80,7 +80,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // card follows cursor movement (only desktop)
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   const bgEl = document.querySelector(".c-bg");
   const cardEl = document.querySelector(".c-card");
 
